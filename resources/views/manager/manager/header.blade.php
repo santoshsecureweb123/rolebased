@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        
-        <title></title>
+        <title>gfdgfd</title>
  		<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
          <link href="{{ asset('css/style.css') }}" rel="stylesheet">
          <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
          <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
          <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
-        
     </head>
-
     <body>
     	<div id="wrapper">
-
             <!-- Top Bar Start -->
             <div class="topbar">
 
@@ -144,13 +139,14 @@
                 </nav>
 
             </div>
-@include('sidebar')
-@yield('master_layout')
-
+			
+		</div>
+		@include('manager.manager.sidebar')
+		@yield('dashboard_content')
 	</body>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
 <script src="{{ asset('js/jquery.min.js') }}" ></script>
-  <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+<script src="{{ asset('js/metisMenu.min.js') }}"></script>
 <script src="{{ asset('js/jquery.slimscroll.js') }}" ></script>
 <script src="{{ asset('js/waves.min.js') }}" ></script>
 <script src="{{ asset('js/app1.js') }}"></script>
