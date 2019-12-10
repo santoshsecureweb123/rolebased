@@ -14,9 +14,21 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+
+/* Manager Route */
+
 Route::get('/', function () {
-    return view('manager.manager');
+    return view('manager.manager.dashboard');
 });
+
+Route::group(['namespace' => 'manager'], function () {
+	Route::get('addskil','SkillController@addSkillView')->name('addskil');
+	Route::post('addskil','SkillController@addNewskill')->name('addskil');
+});
+
+
+/* End Manager Route */
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

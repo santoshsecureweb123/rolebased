@@ -6,13 +6,17 @@
             <ul class="metismenu" id="side-menu">
                 <li class="menu-title">Main</li>
                 <li>
-                    <a href="index.html" class="waves-effect"> <span class="badge badge-primary badge-pill float-right">2</span>  <span> Dashboard </span>
+                    <a href="" class="waves-effect"> <span class="badge badge-primary badge-pill float-right">2</span>  <span> Dashboard </span>
                     </a>
                 </li>
                 <li> 
-                    <a href="calendar.html" class="waves-effect"><span> Calendar </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><span> Skils <span class="float-right menu-arrow"></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{{route('addskil')}}">Add Skils</a></li>
+                        
+                    </ul>
                 </li>
-                <li> 
+              <!--   <li> 
                     <a href="javascript:void(0);" class="waves-effect"><span> Email <span class="float-right menu-arrow"></span> </span></a>
                     <ul class="submenu">
                         <li><a href="email-inbox.html">Inbox</a>
@@ -22,7 +26,7 @@
                         <li><a href="email-compose.html">Email Compose</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
         <!-- Sidebar -->

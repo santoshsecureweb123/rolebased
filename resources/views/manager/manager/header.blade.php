@@ -7,6 +7,7 @@
          <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
          <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
          <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
+        
     </head>
     <body>
     	<div id="wrapper">
@@ -144,8 +145,9 @@
 		@include('manager.manager.sidebar')
 		@yield('dashboard_content')
 	</body>
+     <script src="{{ asset('js/jquery.min.js') }}" ></script>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
-<script src="{{ asset('js/jquery.min.js') }}" ></script>
+
 <script src="{{ asset('js/metisMenu.min.js') }}"></script>
 <script src="{{ asset('js/jquery.slimscroll.js') }}" ></script>
 <script src="{{ asset('js/waves.min.js') }}" ></script>
