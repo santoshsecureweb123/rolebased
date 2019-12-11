@@ -26,4 +26,8 @@ class NewsController extends Controller
        return view('news/newsView',['news'=>$array_data]);
 
  }
+ public function viewNews()
+ {
+    return view('manager/todo/todo');
+ }
 }

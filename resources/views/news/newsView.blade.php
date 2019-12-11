@@ -9,6 +9,9 @@
 
 <style type="text/css">
 	/* IMPORT GOOGLE FONTS */
+	iframe{
+		float:right !important;;
+	}
 
 #news_iframe_scroll	{
 		width: 100%;
@@ -46,7 +49,7 @@
 
 /* EMBEDDED NEWS PAGE BODY */
 
-#NewsDiv	{ position: absolute; left: 0; top: 0px; width: 10%; }
+#NewsDiv	{ position: absolute; left: 0; top: 0px; width: 50%; float: right;}
 
 body.news-scroll {
 		background-color: #FFFFFF;
@@ -88,7 +91,7 @@ body.news-scroll {
 <div id="NewsDiv">
 <div class="scroll-text-if">
 @foreach ($news as $newVal)
-<span class="scroll-title-if"> Technology News<br>
+<span class="scroll-title-if"><br>
 </span> <?php echo $newVal['title']; ?>
 <a href="<?php echo $newVal['link']; ?>">Read More</a>.
 

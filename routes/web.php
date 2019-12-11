@@ -34,3 +34,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('news','NewsController@newsfunc');
+//Route::get('news','NewsController@viewNews');
+
+
