@@ -7,6 +7,10 @@
          <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
          <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
          <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/manager.css') }}" rel="stylesheet">
+         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+         <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+
         
     </head>
     <body>
@@ -145,9 +149,12 @@
 		@include('manager.manager.sidebar')
 		@yield('dashboard_content')
 	</body>
-     <script src="{{ asset('js/jquery.min.js') }}" ></script>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
 
+<script src="{{ asset('js/jquery.min.js') }}" ></script>
+<script src="{{ asset('js/manager.js') }}" ></script>
+<script src="{{ asset('js/select2.min.js') }}" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
 <script src="{{ asset('js/metisMenu.min.js') }}"></script>
 <script src="{{ asset('js/jquery.slimscroll.js') }}" ></script>
 <script src="{{ asset('js/waves.min.js') }}" ></script>

@@ -18,6 +18,7 @@
                                             <th>Sr.No</th>
                                             <th>Skill Name</th>
                                             <th>Action</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -28,7 +29,14 @@
                                             <td>{{$skills->skills_name}}</td>
                                             <td>
 <button type="button" class="btn btn-info waves-effect waves-light" onClick="editskill({{$skills->skills_id}})">Edit</button>
-<button type="button" class="btn btn-danger waves-effect waves-light">Delete</button>
+<button type="button" class="btn btn-danger waves-effect waves-light" onClick="deletskill({{$skills->skills_id}})">Delete</button>
+                                            </td>
+                                            <td>
+@if($skills->status == 1) <button type="button" class="btn btn-info waves-effect waves-light" onClick="statuscheck(0,{{$skills->skills_id}})">Active</button>
+@else
+<button type="button" class="btn btn-danger waves-effect waves-light" onClick="statuscheck(1,{{$skills->skills_id}})">InActive</button>
+@endif
+
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
@@ -48,12 +56,13 @@
 	                    <div class="card">
 	                        <div class="card-body">
 
-	                           <form class="" action="{{ route('addskil')}}" method="post">
+	                           <form class="" action="{{ route('allskill')}}" method="post">
 	                           	@csrf
 	                           	 <div class="row">
                                 	<div class="form-group">
                                         <label>Enter Skil Name</label>
-                                        <input type="text" name="skill_name" class="form-control" required placeholder="Enter Skil Name"/>
+                                        <input type="hidden" name="skill_id" id="skill_id" value="">
+                                        <input type="text" id="skill_name" name="skill_name" class="form-control" required placeholder="Enter Skil Name"/>
                                     </div>
 	                     
                                      <div class="form-group mb-0 ">
@@ -79,11 +88,55 @@
 <script>
 	
 	function editskill(skillID) {
-			console.log(skillID);
+		$.ajax({
+			url:"{{route('getskill')}}",
+			type:'post',
+			data:{_token: "{{ csrf_token() }}", skillID:skillID},
+			success:function(res)
+			{
+				if(res.success == true)
+				{
+					$('#skill_id').val(res.skill_id);
+					$('#skill_name').val(res.skill_name);
+				}
+			}
+		});
+	}
+
+	function deletskill(skillID) {
+
+		if (confirm("Are you sure delete skill")){
 			$.ajax({
-				
+				url:"{{route('deleteskill')}}",
+				type:'post',
+				data:{_token: "{{ csrf_token() }}", skillID:skillID},
+				success:function(res)
+				{
+					if(res.success == true)
+					{
+						location.reload(true);
+					}
+				}
 			});
-		}	
+		}
+		
+	}
+
+	function statuscheck(status,id){
+		$.ajax({
+				url:"{{route('skillStatus')}}",
+				type:'post',
+				data:{_token: "{{ csrf_token() }}", status:status,id:id},
+				success:function(res)
+				{
+					console.log(res);
+					if(res.success == true)
+					{
+						location.reload(true);
+					}
+				}
+			});
+	}
 
 </script>
 @endsection

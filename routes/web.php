@@ -11,25 +11,46 @@
 |
 */
 
-/*Route::get('/', function () {
+Auth::routes();
+
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 
 /* Manager Route */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('manager.manager.dashboard');
-});
+});*/
 
-Route::group(['namespace' => 'manager'], function () {
-	Route::get('addskil','SkillController@addSkillView')->name('addskil');
-	Route::post('addskil','SkillController@addNewskill')->name('addskil');
+Route::group(['namespace' => 'manager','middleware' => ['isManager']], function () {
+
+	Route::get('dashboard', 'DashboardController@dashboard');
+	Route::get('allskill','SkillController@addSkillView')->name('allskill');
+	Route::post('allskill','SkillController@addNewskill')->name('allskill');
+	Route::post('getskill','SkillController@getSkill')->name('getskill');
+	Route::post('deleteskill','SkillController@deleteSkill')->name('deleteskill');
+	Route::post('skillStatus','SkillController@skillStatus')->name('skillStatus');
+	Route::get('addnew','UserController@showUserForm')->name('addnew');
+	Route::post('addnew','UserController@addNewUser')->name('addnew');
+	Route::get('allUser','UserController@getAllUser')->name('allUser');
+	Route::get('deleteUser','UserController@deleteUser')->name('deleteUser');
+	Route::get('editUser','UserController@editUser')->name('editUser');
+	Route::get('addbroadcast','DashboardController@broadcastView')->name('addbroadcast');
+	Route::post('addbroadcast','DashboardController@broadcastSave')->name('addbroadcast');
 });
 
 
 /* End Manager Route */
-Auth::routes();
+
+Route::group(['namespace' => 'superAdmin','middleware' => ['isSuperAdmin']], function () {	
+	Route::get('superAdmin','UserController@dashboard')->name('superAdmin');
+});
+
+Route::group(['namespace' => 'user','middleware' => ['isUser']], function () {
+	Route::get('userdashboard','UserController@dashboard')->name('userdashboard');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

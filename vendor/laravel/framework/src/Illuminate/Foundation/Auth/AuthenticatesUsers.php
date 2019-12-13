@@ -119,7 +119,17 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        //
+        if($user->role_id == 1)
+        {
+           return redirect('superAdmin');
+
+        }elseif($user->role_id == 2){
+
+           return redirect('dashboard');
+        }
+        else{
+          return redirect('userdashboard');
+        }
     }
 
     /**
