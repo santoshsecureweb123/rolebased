@@ -1,0 +1,1 @@
+allteam.blade.php

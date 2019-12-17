@@ -18,6 +18,7 @@ class IsUser
     {
         if(Auth::user()->role_id == 3)
         {
+            session(['user_id' => Auth::user()->id]);
             return $next($request);
         }else{
             return redirect()->back();

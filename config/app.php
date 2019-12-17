@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        NotificationChannels\PusherPushNotifications\PusherPushNotificationsServiceProvider::class,
         
         /*
          * Application Service Providers...

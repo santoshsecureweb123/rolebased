@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>gfdgfd</title>
+        <title>Management</title>
  		<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
          <link href="{{ asset('css/style.css') }}" rel="stylesheet">
          <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -10,10 +10,13 @@
          <link href="{{ asset('css/manager.css') }}" rel="stylesheet">
          <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
          <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/croppie.css') }}" rel="stylesheet">
+         <script src="{{ asset('js/croppie.js') }}"></script>
 
         
     </head>
     <body>
+        
     	<div id="wrapper">
             <!-- Top Bar Start -->
             <div class="topbar">
@@ -44,14 +47,15 @@
                         <!-- language-->
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{ asset('images/flags/us_flag.jpg') }}" class="mr-2" height="12" alt=""/> English </span>
+                                <?php $user_id = session()->get('user_id');
+                                    $image = App\User::where('id',$user_id)->first('image');
+                                  ?>
+                                <img src="{{ asset('image/') }}/{{$image->image}}" class="mr-2 rounded-circle" alt=""/ height="50px" width="50px"> </span>
+                                
                             </a>
                             <div class="dropdown-menu dropdown-menu-right language-switch">
-                                <a class="dropdown-item" href="#"><img src="{{ asset('images/flags/germany_flag.jpg') }}" alt="" height="16" /><span> German </span></a>
-                                <a class="dropdown-item" href="#"><img src="{{ asset('images/flags/italy_flag.jpg') }}" alt="" height="16" /><span> Italian </span></a>
-                                <a class="dropdown-item" href="#"><img src="{{ asset('images/flags/french_flag.jpg') }}" alt="" height="16" /><span> French </span></a>
-                                <a class="dropdown-item" href="#"><img src="{{ asset('images/flags/spain_flag.jpg') }}" alt="" height="16" /><span> Spanish </span></a>
-                                <a class="dropdown-item" href="#"><img src="{{ asset('images/flags/russia_flag.jpg') }}" alt="" height="16" /><span> Russian </span></a>
+                                <a class="dropdown-item" href="{{route('logout')}}">Log Out</a>
+                             
                             </div>
                         </li>
 
@@ -62,84 +66,13 @@
                             </a>
                         </li>
 
-                        <!-- notification -->
-                        <li class="dropdown notification-list list-inline-item">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                               
-                                <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
-                                <!-- item-->
-                                <h6 class="dropdown-item-text">
-                                    Notifications (258)
-                                </h6>
-                                <div class="slimscroll notification-item-list">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                        <div class="notify-icon bg-success"></div>
-                                        <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                                    </a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning"></div>
-                                        <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
-                                    </a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info"></div>
-                                        <p class="notify-details">Your item is shipped<span class="text-muted">It is a long established fact that a reader will</span></p>
-                                    </a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary"></div>
-                                        <p class="notify-details">Your order is placed<span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                                    </a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-danger"></div>
-                                        <p class="notify-details">New Message received<span class="text-muted">You have 87 unread messages</span></p>
-                                    </a>
-                                </div>
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-all">
-                                    View all 
-                                </a>
-                            </div>
-                        </li>
+                       
 
-                        <li class="dropdown notification-list list-inline-item">
-                                    <div class="dropdown notification-list nav-pro-img">
-                                        <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                            <img src="{{ asset('images/users/user-4.jpg') }}" alt="user" class="rounded-circle">
-                                        </a>
-                                        
-                                    </div>
-                                </li>
+                
 
                     </ul>
 
-                    <ul class="list-inline menu-left mb-0">
-                        <li class="float-left">
-                            <button class="button-menu-mobile open-left waves-effect">
-                               
-                            </button>
-                        </li>
-                        <li class="d-none d-sm-block">
-                            <div class="dropdown pt-3 d-inline-block">
-                                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Create
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    
 
                 </nav>
 
@@ -151,6 +84,7 @@
 	</body>
 
 <script src="{{ asset('js/jquery.min.js') }}" ></script>
+<script src="{{ asset('js/easyNotify.js') }}" ></script>
 <script src="{{ asset('js/manager.js') }}" ></script>
 <script src="{{ asset('js/select2.min.js') }}" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
