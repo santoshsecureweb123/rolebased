@@ -1,4 +1,3 @@
-
 <div class="left side-menu">
     <div class="slimscroll-menu" id="remove-scroll">
         <!--- Sidemenu -->
@@ -24,7 +23,7 @@
                     <a href="javascript:void(0);" class="waves-effect"><span> User <span class="float-right menu-arrow"></span> </span></a>
                     <ul class="submenu">
                         <li><a href="{{route('allUser')}}">All User</a></li>
-                        <!-- <li><a href="{{route('addnew')}}">Add New User</a></li> -->
+                        <li><a href="{{route('addnew')}}">Add New User</a></li>
                     </ul>
                 </li>
 

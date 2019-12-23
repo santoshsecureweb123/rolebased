@@ -18,7 +18,6 @@ class IsSuperAdmin
     {
          if(Auth::user()->role_id == 1)
             {
-                 session(['user_id' => Auth::user()->id,'role_id' => Auth::user()->role_id]);
                 return $next($request);
             }else{
                 return redirect()->back();
