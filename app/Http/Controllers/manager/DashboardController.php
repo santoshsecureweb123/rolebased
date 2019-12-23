@@ -4,6 +4,8 @@ namespace App\Http\Controllers\manager;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 use Charts;
 use App\Skill;
 use App\User;
@@ -28,13 +30,5 @@ class DashboardController extends Controller
             ->values([$nodejs,$php,$angular]);
             return view('manager.manager.dashboard',compact('chart'));
     }
-
-    public function broadcastView()
-    {
-        return view('manager.broadcast.broadcast');
-    }
-    public function broadcastSave()
-    {
-        // echo "string"; exit;
-    }
+   
 }

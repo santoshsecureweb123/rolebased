@@ -18,6 +18,7 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
@@ -80,6 +81,7 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         ),
         'P' => 
         array (
+            'Pusher\\' => 7,
             'Psy\\' => 4,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -96,6 +98,7 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'N' => 
         array (
             'NunoMaduro\\Collision\\' => 21,
+            'NotificationChannels\\PusherPushNotifications\\' => 45,
         ),
         'M' => 
         array (
@@ -278,6 +281,10 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
+        'Pusher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pusher/pusher-php-server/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -317,6 +324,10 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'NunoMaduro\\Collision\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
+        ),
+        'NotificationChannels\\PusherPushNotifications\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-notification-channels/pusher-push-notifications/src',
         ),
         'Monolog\\' => 
         array (
@@ -430,8 +441,9 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
     );
 
     public static $classMap = array (
-        'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Broadcast' => __DIR__ . '/../..' . '/app/Broadcast.php',
+        'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel (2).php',
+        'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler (2).php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -440,9 +452,16 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
+        'App\\Http\\Controllers\\manager\\BroadcastController' => __DIR__ . '/../..' . '/app/Http/Controllers/manager/BroadcastController.php',
         'App\\Http\\Controllers\\manager\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/manager/DashboardController.php',
         'App\\Http\\Controllers\\manager\\SkillController' => __DIR__ . '/../..' . '/app/Http/Controllers/manager/SkillController.php',
         'App\\Http\\Controllers\\manager\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/manager/UserController.php',
+        'App\\Http\\Controllers\\superAdmin\\AddRoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/AddRoleController.php',
+        'App\\Http\\Controllers\\superAdmin\\AddUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/AddUserController.php',
+        'App\\Http\\Controllers\\superAdmin\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/QuizController.php',
+        'App\\Http\\Controllers\\superAdmin\\QuizQuestionController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/QuizQuestionController.php',
+        'App\\Http\\Controllers\\superAdmin\\SuperAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/SuperAdminController.php',
+        'App\\Http\\Controllers\\superAdmin\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/TeamController.php',
         'App\\Http\\Controllers\\superAdmin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/superAdmin/UserController.php',
         'App\\Http\\Controllers\\user\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/user/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -462,7 +481,12 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Quiz' => __DIR__ . '/../..' . '/app/Quiz.php',
+        'App\\QuizQuestion' => __DIR__ . '/../..' . '/app/QuizQuestion.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
+        'App\\RoleStatus' => __DIR__ . '/../..' . '/app/RoleStatus.php',
         'App\\Skill' => __DIR__ . '/../..' . '/app/Skill.php',
+        'App\\Team' => __DIR__ . '/../..' . '/app/Team.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
@@ -2394,6 +2418,10 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'NotificationChannels\\PusherPushNotifications\\Exceptions\\CouldNotCreateMessage' => __DIR__ . '/..' . '/laravel-notification-channels/pusher-push-notifications/src/Exceptions/CouldNotCreateMessage.php',
+        'NotificationChannels\\PusherPushNotifications\\PusherChannel' => __DIR__ . '/..' . '/laravel-notification-channels/pusher-push-notifications/src/PusherChannel.php',
+        'NotificationChannels\\PusherPushNotifications\\PusherMessage' => __DIR__ . '/..' . '/laravel-notification-channels/pusher-push-notifications/src/PusherMessage.php',
+        'NotificationChannels\\PusherPushNotifications\\PusherPushNotificationsServiceProvider' => __DIR__ . '/..' . '/laravel-notification-channels/pusher-push-notifications/src/PusherPushNotificationsServiceProvider.php',
         'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Laravel/CollisionServiceProvider.php',
         'NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php',
         'NunoMaduro\\Collision\\Adapters\\Laravel\\Inspector' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Laravel/Inspector.php',
@@ -3337,6 +3365,11 @@ class ComposerStaticInit0d262fac1405a5cd314555f1ea23d567
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Pusher\\Pusher' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Pusher.php',
+        'Pusher\\PusherCrypto' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherCrypto.php',
+        'Pusher\\PusherException' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherException.php',
+        'Pusher\\PusherInstance' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/PusherInstance.php',
+        'Pusher\\Webhook' => __DIR__ . '/..' . '/pusher/pusher-php-server/src/Webhook.php',
         'Ramsey\\Uuid\\BinaryUtils' => __DIR__ . '/..' . '/ramsey/uuid/src/BinaryUtils.php',
         'Ramsey\\Uuid\\Builder\\DefaultUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DefaultUuidBuilder.php',
         'Ramsey\\Uuid\\Builder\\DegradedUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DegradedUuidBuilder.php',
